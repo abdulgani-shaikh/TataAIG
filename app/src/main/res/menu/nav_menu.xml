@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/knowledgeCentre"
+        android:title="Knowledge Centre">
+        <menu>
+            <item
+                android:id="@+id/products"
+                android:title="Products"/>
+            <item
+                android:id="@+id/engagement"
+                android:title="Engagement"/>
+            <item
+                android:id="@+id/agencyConnect"
+                android:title="Agency Connect"/>
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/serving"
+        android:title="Serving">
+        <menu>
+            <item
+                android:id="@+id/claims"
+                android:title="Claims"/>
+            <item
+                android:id="@+id/endorsements"
+                android:title="Endorsements"/>
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/renewals"
+        android:title="Renewals">
+    </item>
+
+    <item
+        android:id="@+id/quick_quote"
+        android:title="Quick Quote">
+    </item>
+
+    <item
+        android:id="@+id/businessReport"
+        android:title="Business Report">
+    </item>
+
+    <item
+        android:id="@+id/giant_steps"
+        android:title="Giant Steps">
+    </item>
+
+    <item
+        android:id="@+id/menuCampaigns"
+        android:title="Campaigns">
+    </item>
+
+    <item
+        android:id="@+id/commissions"
+        android:title="Commissions">
+    </item>
+
+    <item
+        android:id="@+id/locators"
+        android:title="Locators">
+    </item>
+
+    <item
+        android:id="@+id/help"
+        android:title="Help">
+        <menu>
+            <item
+                android:id="@+id/contactRM"
+                android:title="Contact RM" />
+            <item
+                android:id="@+id/faq"
+                android:title="FAQ"/>
+            <item
+                android:id="@+id/raiseConcern"
+                android:title="Raise Concern"/>
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/logout"
+        android:title="Logout">
+    </item>
+
+</menu>

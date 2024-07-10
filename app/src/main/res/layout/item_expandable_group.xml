@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/item_expandable_list_view"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:text="Group Name"
+    android:textColor="@color/dark_blue_color"
+    android:padding="@dimen/business_card_inner_child_vertical_padding"
+    android:drawablePadding="15dp"
+    app:drawableStartCompat="@drawable/ic_search"
+    android:gravity="center_vertical"
+    />

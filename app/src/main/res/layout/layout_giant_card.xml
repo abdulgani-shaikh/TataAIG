@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardUseCompatPadding="true"
+    app:cardElevation="@dimen/card_default_elevation"
+    app:cardCornerRadius="@dimen/card_default_radius"
+    tools:showIn="@layout/activity_main"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@drawable/giant_card_gradient"
+        android:paddingHorizontal="@dimen/business_card_inner_child_horizontal_padding"
+        android:paddingVertical="@dimen/business_card_inner_child_vertical_padding">
+
+        <TextView
+            android:id="@+id/textview1_giant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="product name"
+            android:textAllCaps="true"
+            android:textColor="@color/light_blue_color"
+            android:textFontWeight="500"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textview2_giant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/card_inner_child_vertical_padding"
+            android:text="Copy up to three\nlines will come\nhere"
+            android:textColor="@color/white"
+            android:textFontWeight="600"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textview1_giant" />
+
+        <TextView
+            android:id="@+id/textview3_giant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lorem ipsem upto 2\nlines"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textview2_giant" />
+
+        <TextView
+            android:id="@+id/textview4_giant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/card_inner_child_vertical_padding"
+            android:background="@drawable/pill_white_stroke"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="5dp"
+            android:text="Button"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textview3_giant" />
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="-50dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/img_family"
+            app:layout_constraintStart_toEndOf="@id/barrier"
+            android:scaleType="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="right"
+            app:constraint_referenced_ids="textview1_giant,textview2_giant,textview3_giant,textview3_giant"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

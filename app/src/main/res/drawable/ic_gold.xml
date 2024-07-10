@@ -1,0 +1,21 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="35dp"
+    android:height="30dp"
+    android:viewportWidth="48.891"
+    android:viewportHeight="48.891">
+
+  <!-- Golden Brick -->
+  <path
+      android:pathData="M36.418,32.426 L32.428,20.453L16.464,20.453l-3.991,11.973Z"
+      android:fillColor="#ffe959"
+      android:fillType="evenOdd"/>
+
+  <!-- Border for the Golden Brick -->
+  <path
+      android:pathData="M36.418,32.426 L32.428,20.453L16.464,20.453l-3.991,11.973Z"
+      android:strokeLineJoin="round"
+      android:strokeWidth="2"
+      android:fillColor="#00000000"
+      android:strokeColor="#323338"
+      android:strokeLineCap="round"/>
+</vector>

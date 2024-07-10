@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/card_default_radius"
+    app:cardElevation="@dimen/card_default_elevation"
+    app:cardUseCompatPadding="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <TextView
+            android:id="@+id/date_campaign"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/sample_quarterly_date"
+            android:fontFamily="@font/poppins_semi_bold"
+            app:layout_constraintEnd_toStartOf="@+id/as_on_date"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintBottom_toTopOf="@id/first_barrier"
+            android:paddingTop="@dimen/card_inner_child_horizontal_padding"
+            android:paddingBottom="10dp"
+            android:gravity="center_vertical"
+            />
+
+        <TextView
+            android:id="@+id/as_on_date"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="@string/sample_as_of_date"
+            android:textAlignment="textEnd"
+            app:layout_constraintEnd_toEndOf="@id/end_guideline"
+            app:layout_constraintStart_toEndOf="@+id/date_campaign"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/first_barrier"
+            android:paddingVertical="@dimen/card_inner_child_horizontal_padding"
+            />
+
+        <View
+            android:id="@+id/first_divider"
+            android:layout_width="match_parent"
+            android:layout_height="6dp"
+            android:background="@drawable/dotted_divider"
+            app:layout_constraintTop_toBottomOf="@id/first_barrier" />
+
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/first_barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="as_on_date,date_campaign" />
+
+<!--            android:padding="@dimen/business_card_inner_child_vertical_padding"-->
+        <TextView
+            android:id="@+id/title_campaign_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/default_campaign_card_subject"
+            android:textAlignment="center"
+            android:textColor="@color/dark_blue_color"
+            android:fontFamily="@font/poppins_medium"
+            android:layout_marginTop="@dimen/default_large_padding"
+            android:layout_marginHorizontal="@dimen/large_padding_card"
+            android:textSize="20sp"
+            app:layout_goneMarginTop="0dp"
+            app:layout_constraintEnd_toEndOf="@id/end_guideline"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            app:layout_constraintBottom_toTopOf="@id/circular_progress_campaign"
+            app:layout_constraintTop_toBottomOf="@id/first_divider" />
+
+        <include
+            android:id="@+id/target_dual_text"
+            layout="@layout/dual_text_vertical_large"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_large_padding"
+            app:layout_constraintEnd_toStartOf="@+id/circular_progress_campaign"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@id/title_campaign_card" />
+
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/circular_progress_campaign"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:progress="35"
+            app:indicatorColor="@color/progress_indicator_color_green"
+            app:indicatorSize="80dp"
+            app:indicatorTrackGapSize="5dp"
+            app:layout_constraintDimensionRatio="1,1"
+            android:layout_marginHorizontal="@dimen/business_card_inner_child_horizontal_padding"
+            android:layout_marginTop="@dimen/default_large_padding"
+            app:layout_constraintEnd_toStartOf="@+id/achieved_dual_text"
+            app:layout_constraintStart_toEndOf="@+id/target_dual_text"
+            app:layout_constraintTop_toBottomOf="@id/title_campaign_card"
+            app:trackColor="@color/progress_track_color_gray"
+            app:trackThickness="7dp"
+            app:trackCornerRadius="7dp"
+            />
+
+        <ImageView
+            android:id="@+id/circular_progress_image_campaign"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:importantForAccessibility="no"
+            android:padding="20dp"
+            android:scaleType="center"
+            android:src="@drawable/ic_motor_blue"
+            app:layout_constraintBottom_toBottomOf="@id/circular_progress_campaign"
+            app:layout_constraintEnd_toEndOf="@id/circular_progress_campaign"
+            app:layout_constraintStart_toStartOf="@id/circular_progress_campaign"
+            app:layout_constraintTop_toTopOf="@id/circular_progress_campaign" />
+
+        <include
+            android:id="@+id/achieved_dual_text"
+            layout="@layout/dual_text_vertical_large"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_large_padding"
+            app:layout_constraintEnd_toEndOf="@id/end_guideline"
+            app:layout_constraintStart_toEndOf="@+id/circular_progress_campaign"
+            app:layout_constraintTop_toBottomOf="@id/title_campaign_card" />
+
+
+        <TextView
+            android:id="@+id/membership_text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/club"
+            android:textColor="#323338"
+            android:gravity="center"
+            app:drawableEndCompat="@drawable/ic_gold"
+            tools:viewBindingIgnore="true"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            app:layout_constraintEnd_toStartOf="@id/membership_text2"
+            app:layout_constraintTop_toBottomOf="@id/circular_progress_campaign"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            />
+
+        <TextView
+            android:id="@+id/membership_text2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gold"
+            android:textColor="#323338"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/membership_text1"
+            app:layout_constraintEnd_toEndOf="@id/end_guideline"
+            app:layout_constraintTop_toTopOf="@id/membership_text1"
+            tools:viewBindingIgnore="true"
+            app:layout_constraintBottom_toBottomOf="@id/membership_text1"/>
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/membership_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="membership_text2,membership_text1"
+            />
+
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="target_dual_text,achieved_dual_text,circular_progress_campaign,membership_text1,membership_text2," />
+
+        <View
+            android:id="@+id/second_divider"
+            android:layout_width="wrap_content"
+            android:layout_height="6dp"
+            android:background="@drawable/dotted_divider"
+            app:layout_constraintBottom_toBottomOf="@id/eligibility_text_campaign"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/eligibility_text_campaign" />
+
+        <TextView
+            android:id="@+id/eligibility_text_campaign"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:text="@string/eligible"
+            android:fontFamily="@font/poppins_semi_bold"
+            app:drawableStartCompat="@drawable/ic_green_dot"
+            android:paddingHorizontal="@dimen/card_inner_child_horizontal_padding"
+            android:background="@color/white"
+            android:layout_margin="@dimen/business_card_inner_child_horizontal_padding"
+            app:layout_constraintEnd_toEndOf="@+id/end_guideline"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@id/barrier3" />
+
+        <TextView
+            android:id="@+id/upcoming_target_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/large_padding_card"
+            android:drawablePadding="5dp"
+            android:text="@string/default_upcoming_title"
+            android:textAlignment="center"
+            android:visibility="visible"
+            app:drawableEndCompat="@drawable/ic_info"
+            android:fontFamily="@font/poppins_medium"
+            app:layout_constraintEnd_toEndOf="@id/end_guideline"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@id/eligibility_text_campaign" />
+
+        <TextView
+            android:id="@+id/upcoming_target_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/default_upcoming_count"
+            android:textAlignment="center"
+            android:textColor="@color/dark_blue_color"
+            android:fontFamily="@font/poppins_medium"
+            android:textSize="30sp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="@id/end_guideline"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@id/upcoming_target_title" />
+
+
+        <TextView
+            android:id="@+id/earned_progress_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/large_padding_card"
+            android:text="@string/earned"
+            android:fontFamily="@font/poppins_medium"
+            app:layout_constraintEnd_toStartOf="@+id/horizontal_progress_title"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@id/eligibility_text_campaign" />
+
+        <TextView
+            android:id="@+id/horizontal_progress_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/wtd_gwp"
+            android:fontFamily="@font/poppins_medium"
+            app:layout_constraintEnd_toStartOf="@+id/target_progress_title"
+            app:layout_constraintStart_toEndOf="@+id/earned_progress_title"
+            app:layout_constraintTop_toTopOf="@id/earned_progress_title" />
+
+        <TextView
+            android:id="@+id/target_progress_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/target"
+            android:fontFamily="@font/poppins_medium"
+            app:layout_constraintEnd_toEndOf="@+id/end_guideline"
+            app:layout_constraintStart_toEndOf="@+id/horizontal_progress_title"
+            app:layout_constraintTop_toTopOf="@id/earned_progress_title" />
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/horizontal_progress_club"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:progress="30"
+            app:indicatorColor="@color/progress_indicator_color_green"
+            app:indicatorTrackGapSize="0dp"
+            app:layout_constraintEnd_toEndOf="@id/end_guideline"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@id/earned_progress_title"
+            app:trackColor="@color/progress_track_color_gray"
+            app:trackCornerRadius="7dp"
+            app:trackThickness="7dp"
+            />
+
+        <TextView
+            android:id="@+id/earned_rupees_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/default_earned_count"
+            android:textColor="@color/progress_indicator_color_green"
+            android:textSize="22sp"
+            app:layout_constraintEnd_toStartOf="@+id/target_rupees_progress"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@id/horizontal_progress_club" />
+
+        <TextView
+            android:id="@+id/target_rupees_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2Cr"
+            android:textColor="@color/dark_blue_color"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="@+id/end_guideline"
+            app:layout_constraintStart_toEndOf="@+id/earned_rupees_progress"
+            app:layout_constraintTop_toTopOf="@id/earned_rupees_progress" />
+
+        <TextView
+            android:id="@+id/points_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/card_inner_child_vertical_padding"
+            android:text="@string/default_points"
+            app:layout_constraintEnd_toStartOf="@id/away_from_text"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@id/earned_rupees_progress"
+            app:layout_constraintHorizontal_chainStyle="packed"/>
+
+        <TextView
+            android:id="@+id/away_from_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/card_inner_child_vertical_padding"
+            android:text="@string/away_from"
+            android:paddingHorizontal="3dp"
+            app:layout_constraintEnd_toStartOf="@id/clubname_text"
+            app:layout_constraintStart_toEndOf="@id/points_text"
+            app:layout_constraintTop_toBottomOf="@id/earned_rupees_progress" />
+
+        <TextView
+            android:id="@+id/clubname_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/card_inner_child_vertical_padding"
+            android:text="@string/diamond_club"
+            android:fontFamily="@font/poppins_semi_bold"
+            app:layout_constraintEnd_toEndOf="@id/end_guideline"
+            app:layout_constraintStart_toEndOf="@id/away_from_text"
+            app:layout_constraintTop_toBottomOf="@id/earned_rupees_progress" />
+
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="upcoming_target_title,upcoming_target_count,away_from_text,clubname_text,points_text" />
+
+
+        <Button
+            android:id="@+id/campaign_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/business_card_inner_child_horizontal_padding"
+            android:layout_marginBottom="@dimen/large_padding_card"
+            android:backgroundTint="@color/default_widget_color"
+            android:text="View Campaign"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/end_guideline"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@id/barrier4" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/start_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/business_card_inner_child_horizontal_padding" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/end_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/business_card_inner_child_horizontal_padding" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/giant_steps_Group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="earned_progress_title,horizontal_progress_title,target_progress_title,horizontal_progress_club,earned_rupees_progress,target_rupees_progress,away_from_text,clubname_text,points_text" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/default_bottom_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="upcoming_target_title,upcoming_target_count" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

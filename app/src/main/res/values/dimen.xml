@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <dimen name="card_default_radius">15dp</dimen>
+    <dimen name="card_default_elevation">5dp</dimen>
+    <dimen name="card_title_text_size">18sp</dimen>
+    <dimen name="card_inner_child_horizontal_padding">15dp</dimen>
+    <dimen name="card_inner_child_vertical_padding">10dp</dimen>
+    <dimen name="business_card_inner_child_horizontal_padding">@dimen/default_large_padding</dimen>
+    <dimen name="business_card_inner_child_vertical_padding">15dp</dimen>
+    <dimen name="default_large_padding">20dp</dimen>
+    <dimen name="default_small_gap">5dp</dimen>
+</resources>

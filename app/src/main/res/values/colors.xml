@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="dark_blue_color">#071e54</color>
+    <color name="light_blue_color">#88deec</color>
+    <color name="nav_initial_background_color">#6482ce</color>
+    <color name="default_background_color">#f7f7f7</color>
+    <color name="title_default_color">#141212</color>
+    <color name="text_default_color">#323338</color>
+    <color name="progress_indicator_color_green">#2bb445</color>
+    <color name="progress_track_color_gray">#dadde5</color>
+    <color name="default_widget_color">#055ca8</color>
+</resources>

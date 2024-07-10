@@ -1,0 +1,10 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Practice" parent="Theme.Material3.Light.NoActionBar">
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:windowBackground">@color/default_background_color</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textColor">@color/text_default_color</item>
+        <item name="android:statusBarColor">@color/dark_blue_color</item>
+    </style>
+</resources>

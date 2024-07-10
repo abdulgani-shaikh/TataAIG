@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Practice</string>
+    <string name="quick_actions">Quick Actions</string>
+    <string name="business_summary">Business Summary</string>
+    <string name="nav_open">Nav open</string>
+    <string name="nav_close">Nav close</string>
+    <string name="sample_quarterly_date">Quarterly\n02 May-02 Aug’24</string>
+    <string name="sample_as_of_date">As on 12 Jun 24</string>
+    <string name="default_campaign_card_subject">Comm. Lines Quarterly Campaign</string>
+    <string name="campaign_title">Campaigns</string>
+    <string name="club">Club</string>
+    <string name="gold">Gold</string>
+    <string name="eligible">Eligible</string>
+    <string name="default_title_dual_text">Total Policies</string>
+    <string name="default_number_dual_text">₹25.7Cr</string>
+    <string name="default_upcoming_title">Upcoming Slab Target (Wtd. GWP)</string>
+    <string name="default_upcoming_count">1.5L</string>
+    <string name="earned">Earned</string>
+    <string name="wtd_gwp">WTD. GWP</string>
+    <string name="target">Target</string>
+    <string name="default_earned_count">50,000</string>
+    <string name="away_from">Away From</string>
+    <string name="default_points">1.95cr</string>
+    <string name="diamond_club">Diamond Club</string>
+    <string name="dual_text_large_title">Slab Target (Wtd. GWP)</string>
+    <string name="dual_text_large_number">75K</string>
+    <string name="giant_steps">Giant Steps</string>
+    <string name="health_subtitle">Health</string>
+    <string name="motor_subtitle">Motor</string>
+    <string name="travel_subtitle">Travel</string>
+    <string name="comms_line_subtitle">Comm. Lines</string>
+</resources>
