@@ -1,11 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/title"
-    style="@style/card_title_style"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:drawablePadding="5dp"
-    android:text="@string/quick_actions"
-    tools:showIn="@layout/activity_main" />
+    tools:showIn="@layout/activity_main"
+    android:paddingTop="@dimen/large_padding_card"
+    android:paddingStart="@dimen/business_card_inner_child_horizontal_padding"
+    android:gravity="center_vertical"
+    >
+    <TextView
+        android:id="@+id/title"
+        style="@style/card_title_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/quick_actions"/>
+
+    <ImageView
+        android:id="@+id/titleInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_info"
+        android:padding="5dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone"
+        />
+
+</LinearLayout>
 

@@ -85,23 +85,8 @@ fun populateValues(
 
         membershipGroup.visibility = data.clubGoldVisibility
 
-        //Bottom section
-        when (val v = data.bottomLayout) {
-            is CampaignBottomLayout.ClubLayout -> {
-                giantStepsGroup.visibility = View.VISIBLE
-                defaultBottomGroup.visibility = View.GONE
-            }
-
-            is CampaignBottomLayout.UpcomingTargetLayout -> {
-                giantStepsGroup.visibility = View.GONE
-                defaultBottomGroup.visibility = View.VISIBLE
-
-                upcomingTargetTitle.text = v.upcomingTargetTitle
-                upcomingTargetCount.text = v.upcomingTargetCount.toFormattedString()
-            }
-        }
-
-        campaignButton.text = data.bottomLayout.buttonText
+        upcomingTargetTitle.text = data.upcomingTargetTitle
+        upcomingTargetCount.text = data.upcomingTargetCount.toFormattedString()
     }
 }
 
@@ -118,7 +103,7 @@ fun getAllCampaignData(): List<CampaignCardData> {
     )
 
     val travelData = CampaignCardData(
-        title = "Travel Quarterly Campaign",
+        title = "Travel 24 Campaign",
         progressImageIcon = R.drawable.ic_travel_blue,
     )
 
@@ -130,7 +115,6 @@ fun getAllCampaignData(): List<CampaignCardData> {
         targetCount = 75_000,
         achievedTitle =  "Achieved",
         achievedCount = 55_000,
-        bottomLayout = CampaignBottomLayout.UpcomingTargetLayout("Upcoming Slab Target",25_00_000)
     )
     return arrayListOf(healthData,motorData,travelData,commLineData)
 }

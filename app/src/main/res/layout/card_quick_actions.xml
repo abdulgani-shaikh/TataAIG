@@ -29,7 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="Renewals"
-            android:fontFamily="@font/poppins_medium"
+            style="@style/DefaultSmallTextStyle"
             />
 
         <TextView
@@ -37,9 +37,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="1000 days"
+            style="@style/DefaultSmallTextStyle"
+            android:visibility="invisible"
             android:textColor="#eb2828"
-            android:fontFamily="@font/poppins_medium"
-            android:visibility="invisible" />
+            />
 
     </LinearLayout>
 

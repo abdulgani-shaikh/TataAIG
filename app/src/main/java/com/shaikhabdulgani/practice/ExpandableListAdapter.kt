@@ -14,6 +14,8 @@ class ExpandableListAdapter(
     private val context: Context,
     private val list: List<NavigationMenuGroup>
 ) : BaseExpandableListAdapter() {
+
+
     override fun getGroupCount(): Int {
         return list.size
     }

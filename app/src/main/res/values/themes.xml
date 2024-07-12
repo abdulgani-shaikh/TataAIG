@@ -1,27 +1,45 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.Practice" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-<!--         <item name="android:colorPrimary">@color/dark_blue_color</item>-->
         <item name="android:fontFamily">@font/poppins_regular</item>
         <item name="android:windowBackground">@color/default_background_color</item>
-<!--        <item name="android:includeFontPadding">false</item>-->
+        <item name="android:includeFontPadding">false</item>
         <item name="android:textColor">@color/text_default_color</item>
         <item name="statusBarBackground">@color/dark_blue_color</item>
 
     </style>
 
     <style name="card_title_style">
-        <item name="android:paddingStart">@dimen/business_card_inner_child_horizontal_padding</item>
-        <item name="android:paddingTop">@dimen/large_padding_card</item>
         <item name="android:textAllCaps">true</item>
         <item name="android:textColor">@color/title_default_color</item>
         <item name="android:textSize">@dimen/card_title_text_size</item>
         <item name="android:fontFamily">@font/poppins_medium</item>
     </style>
 
-    <style name="DualTextTitle">
+    <style name="DefaultSmallTextStyle">
+        <item name="android:textSize">@dimen/small_text_size</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+    </style>
 
+    <style name="TooltipTextStyle" parent="DefaultSmallTextStyle">
+        <item name="android:textColor">@color/dark_blue_color</item>
+    </style>
+
+    <style name="DualTextCountStyle">
+        <item name="android:textSize">30sp</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+    </style>
+
+    <style name="DefaultCircularProgressStyle">
+        <item name="indicatorSize">100dp</item>
+        <item name="indicatorColor">@color/progress_indicator_color_green</item>
+        <item name="trackColor">@color/progress_track_color_gray</item>
+        <item name="indicatorTrackGapSize">5dp</item>
+        <item name="trackThickness">7dp</item>
+        <item name="trackCornerRadius">7dp</item>
+        <item name="android:layout_marginStart">@dimen/card_inner_child_vertical_padding</item>
+        <item name="android:layout_marginEnd">@dimen/card_inner_child_vertical_padding</item>
+        <item name="android:layout_marginTop">@dimen/large_padding_card</item>
     </style>
 
     <style name="CircularImageView">

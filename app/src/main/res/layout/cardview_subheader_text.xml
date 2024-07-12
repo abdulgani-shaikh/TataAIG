@@ -12,4 +12,5 @@
     android:textSize="@dimen/card_title_text_size"
     android:textColor="@color/dark_blue_color"
     android:fontFamily="@font/poppins_medium"
+    android:tooltipText="@string/health_subtitle"
     tools:text="Health" />
