@@ -13,7 +13,8 @@ data class CampaignCardData(
     val progressImageIcon: Int = 0,
     val isEligible: Boolean = true,
     val clubGoldVisibility: Int = View.GONE,
-    val bottomLayout: CampaignBottomLayout = CampaignBottomLayout.UpcomingTargetLayout(),
+    val upcomingTargetTitle: String = "Upcoming Slab Target (Wtd. GWP)",
+    val upcomingTargetCount: Int = 25_00_000,
 )
 
 

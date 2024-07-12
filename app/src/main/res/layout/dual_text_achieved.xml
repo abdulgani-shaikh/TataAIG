@@ -5,28 +5,27 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:showIn="@layout/activity_main"
+    tools:showIn="@layout/card_campaign_eligibility_layout"
     >
     <TextView
         android:id="@+id/titleST"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/dark_blue_color"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         style="@style/DefaultSmallTextStyle"
-        tools:text="Total Policies" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/dual_text_earned_title" />
 
     <TextView
         android:id="@+id/numberST"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/dark_blue_color"
-        android:textSize="25sp"
+        style="@style/DualTextCountStyle"
+        android:text="@string/dual_text_large_number"
+        android:textColor="@color/progress_indicator_color_green"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/titleST"
-        android:fontFamily="@font/poppins_medium"
-        tools:text="₹25.7Cr" />
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

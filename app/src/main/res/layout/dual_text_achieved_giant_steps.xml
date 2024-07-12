@@ -5,24 +5,24 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="@layout/card_giant_step"
     >
     <TextView
         android:id="@+id/titleST"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        android:fontFamily="@font/poppins_medium"
+        style="@style/DefaultSmallTextStyle"
         app:layout_constraintTop_toTopOf="parent"
-        android:text="@string/dual_text_large_title" />
+        android:text="@string/earned_premiun" />
 
     <TextView
         android:id="@+id/numberST"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/dark_blue_color"
-        android:textSize="30sp"
-        android:fontFamily="@font/poppins_medium"
-        android:text="@string/dual_text_large_number"
+        style="@style/DualTextCountStyle"
+        android:text="@string/default_earned_premium_value"
+        android:textColor="@color/progress_indicator_color_green"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/titleST"

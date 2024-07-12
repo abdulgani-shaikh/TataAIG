@@ -29,4 +29,11 @@
     <string name="motor_subtitle">Motor</string>
     <string name="travel_subtitle">Travel</string>
     <string name="comms_line_subtitle">Comm. Lines</string>
+    <string name="dual_text_earned_title">Achieved (Wtd. GWP)</string>
+    <string name="default_giant_steps_date">FY 24-25</string>
+    <string name="earned_premiun">Earned Premiun</string>
+    <string name="default_earned_premium_value">₹12.5L</string>
+    <string name="not_eligible">Not Eligible</string>
+    <string name="view_incentive_detail_button">View Incentive detail</string>
+    <string name="default_wtd_target">2Cr</string>
 </resources>

@@ -14,10 +14,10 @@
         >
 
         <TextView
-            android:id="@+id/date_campaign"
+            android:id="@+id/date_giant_steps"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/sample_quarterly_date"
+            android:text="@string/default_giant_steps_date"
             style="@style/DefaultSmallTextStyle"
             android:fontFamily="@font/poppins_semi_bold"
             app:layout_constraintEnd_toStartOf="@+id/as_on_date"
@@ -38,7 +38,7 @@
             android:textAlignment="textEnd"
             android:textSize="@dimen/small_text_size"
             app:layout_constraintEnd_toEndOf="@id/end_guideline"
-            app:layout_constraintStart_toEndOf="@+id/date_campaign"
+            app:layout_constraintStart_toEndOf="@+id/date_giant_steps"
             app:layout_constraintTop_toTopOf="parent"
             android:paddingVertical="@dimen/card_inner_child_horizontal_padding"
             />
@@ -56,39 +56,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:barrierDirection="bottom"
-            app:constraint_referenced_ids="as_on_date,date_campaign" />
-
-<!--            android:padding="@dimen/business_card_inner_child_vertical_padding"-->
-        <TextView
-            android:id="@+id/title_campaign_card"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Travel 24 Campaign"
-            android:textAlignment="center"
-            android:textColor="@color/dark_blue_color"
-            android:fontFamily="@font/poppins_medium"
-            android:layout_marginTop="@dimen/default_large_padding"
-            android:layout_marginHorizontal="@dimen/large_padding_card"
-            android:textSize="20sp"
-            app:layout_goneMarginTop="0dp"
-            app:layout_constraintEnd_toEndOf="@id/end_guideline"
-            app:layout_constraintStart_toStartOf="@id/start_guideline"
-            app:layout_constraintBottom_toTopOf="@id/circular_progress_campaign"
-            app:layout_constraintTop_toBottomOf="@id/first_divider" />
+            app:constraint_referenced_ids="as_on_date,date_giant_steps" />
 
         <include
             android:id="@+id/target_dual_text"
-            layout="@layout/dual_text_target"
+            layout="@layout/dual_text_target_giant_steps"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@+id/circular_progress_giant_steps"
             app:layout_constraintHorizontal_chainStyle="spread_inside"
-            app:layout_constraintEnd_toStartOf="@+id/circular_progress_campaign"
             app:layout_constraintStart_toStartOf="@id/start_guideline"
-            app:layout_constraintTop_toTopOf="@id/circular_progress_campaign"/>
+            app:layout_constraintTop_toTopOf="@id/circular_progress_giant_steps"
+            app:layout_constraintBottom_toBottomOf="@id/circular_progress_giant_steps"
+            />
 
 
         <com.google.android.material.progressindicator.CircularProgressIndicator
-            android:id="@+id/circular_progress_campaign"
+            android:id="@+id/circular_progress_giant_steps"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:progress="35"
@@ -96,50 +80,19 @@
             app:layout_constraintDimensionRatio="1,1"
             app:layout_constraintEnd_toStartOf="@+id/achieved_dual_text"
             app:layout_constraintStart_toEndOf="@+id/target_dual_text"
-            app:layout_constraintTop_toBottomOf="@id/title_campaign_card"
+            app:layout_constraintTop_toBottomOf="@id/first_barrier"
             />
-
-<!--        <com.google.android.material.progressindicator.CircularProgressIndicator-->
-<!--            android:id="@+id/circular_progress_campaign"-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:progress="35"-->
-<!--            app:indicatorSize="80dp"-->
-<!--            app:indicatorColor="@color/progress_indicator_color_green"-->
-<!--            app:trackColor="@color/progress_track_color_gray"-->
-<!--            app:indicatorTrackGapSize="5dp"-->
-<!--            app:trackThickness="7dp"-->
-<!--            app:trackCornerRadius="7dp"-->
-<!--            android:layout_marginHorizontal="@dimen/card_inner_child_vertical_padding"-->
-<!--            app:layout_constraintDimensionRatio="1,1"-->
-<!--            android:layout_marginTop="@dimen/default_large_padding"-->
-<!--            app:layout_constraintEnd_toStartOf="@+id/achieved_dual_text"-->
-<!--            app:layout_constraintStart_toEndOf="@+id/target_dual_text"-->
-<!--            app:layout_constraintTop_toBottomOf="@id/title_campaign_card"-->
-<!--            />-->
-
-
-        <ImageView
-            android:id="@+id/circular_progress_image_campaign"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:importantForAccessibility="no"
-            android:padding="20dp"
-            android:scaleType="center"
-            android:src="@drawable/ic_motor_blue"
-            app:layout_constraintBottom_toBottomOf="@id/circular_progress_campaign"
-            app:layout_constraintEnd_toEndOf="@id/circular_progress_campaign"
-            app:layout_constraintStart_toStartOf="@id/circular_progress_campaign"
-            app:layout_constraintTop_toTopOf="@id/circular_progress_campaign" />
 
         <include
             android:id="@+id/achieved_dual_text"
-            layout="@layout/dual_text_achieved"
+            layout="@layout/dual_text_achieved_giant_steps"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="@id/end_guideline"
-            app:layout_constraintStart_toEndOf="@+id/circular_progress_campaign"
-            app:layout_constraintTop_toTopOf="@id/circular_progress_campaign" />
+            app:layout_constraintStart_toEndOf="@+id/circular_progress_giant_steps"
+            app:layout_constraintTop_toTopOf="@id/circular_progress_giant_steps"
+            app:layout_constraintBottom_toBottomOf="@id/circular_progress_giant_steps"
+            />
 
 
         <TextView
@@ -153,7 +106,7 @@
             tools:viewBindingIgnore="true"
             app:layout_constraintStart_toStartOf="@id/start_guideline"
             app:layout_constraintEnd_toStartOf="@id/membership_text2"
-            app:layout_constraintTop_toBottomOf="@id/circular_progress_campaign"
+            app:layout_constraintTop_toBottomOf="@id/circular_progress_giant_steps"
             app:layout_constraintHorizontal_chainStyle="packed"
             />
 
@@ -184,20 +137,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:barrierDirection="bottom"
-            app:constraint_referenced_ids="target_dual_text,achieved_dual_text,circular_progress_campaign,membership_text1,membership_text2," />
+            app:constraint_referenced_ids="target_dual_text,achieved_dual_text,circular_progress_giant_steps,membership_text1,membership_text2," />
 
         <View
             android:id="@+id/second_divider"
             android:layout_width="wrap_content"
             android:layout_height="6dp"
             android:background="@drawable/dotted_divider"
-            app:layout_constraintBottom_toBottomOf="@id/eligibility_text_campaign"
+            app:layout_constraintBottom_toBottomOf="@id/eligibility_text_giant_steps"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/eligibility_text_campaign" />
+            app:layout_constraintTop_toTopOf="@id/eligibility_text_giant_steps" />
 
         <TextView
-            android:id="@+id/eligibility_text_campaign"
+            android:id="@+id/eligibility_text_giant_steps"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:drawablePadding="5dp"
@@ -207,52 +160,112 @@
             app:drawableStartCompat="@drawable/ic_red_dot"
             android:paddingHorizontal="@dimen/card_inner_child_horizontal_padding"
             android:background="@color/white"
-            android:layout_margin="@dimen/business_card_inner_child_horizontal_padding"
+            android:layout_marginTop="@dimen/business_card_inner_child_horizontal_padding"
             app:layout_constraintEnd_toEndOf="@+id/end_guideline"
             app:layout_constraintStart_toStartOf="@id/start_guideline"
             app:layout_constraintTop_toBottomOf="@id/barrier3" />
 
+
         <TextView
-            android:id="@+id/upcoming_target_title"
+            android:id="@+id/earned_progress_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/large_padding_card"
-            android:drawablePadding="5dp"
-            android:text="@string/default_upcoming_title"
-            android:textAlignment="center"
-            android:visibility="visible"
-            app:drawableEndCompat="@drawable/ic_info"
-            android:fontFamily="@font/poppins_medium"
-            app:layout_constraintEnd_toEndOf="@id/end_guideline"
+            android:text="@string/earned"
+            style="@style/DefaultSmallTextStyle"
+            app:layout_constraintEnd_toStartOf="@+id/horizontal_progress_title"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
             app:layout_constraintStart_toStartOf="@id/start_guideline"
-            app:layout_constraintTop_toBottomOf="@id/eligibility_text_campaign" />
+            app:layout_constraintTop_toBottomOf="@id/eligibility_text_giant_steps" />
 
         <TextView
-            android:id="@+id/upcoming_target_count"
+            android:id="@+id/horizontal_progress_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/default_upcoming_count"
-            android:textAlignment="center"
-            android:textColor="@color/dark_blue_color"
-            android:fontFamily="@font/poppins_medium"
-            android:textSize="30sp"
-            android:visibility="visible"
+            android:text="@string/wtd_gwp"
+            style="@style/DefaultSmallTextStyle"
+            app:layout_constraintEnd_toStartOf="@+id/target_progress_title"
+            app:layout_constraintStart_toEndOf="@+id/earned_progress_title"
+            app:layout_constraintTop_toTopOf="@id/earned_progress_title" />
+
+        <TextView
+            android:id="@+id/target_progress_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/target"
+            style="@style/DefaultSmallTextStyle"
+            app:layout_constraintEnd_toEndOf="@+id/end_guideline"
+            app:layout_constraintStart_toEndOf="@+id/horizontal_progress_title"
+            app:layout_constraintTop_toTopOf="@id/earned_progress_title" />
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/horizontal_progress_club"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:progress="30"
+            app:indicatorColor="@color/progress_indicator_color_green"
+            app:indicatorTrackGapSize="0dp"
             app:layout_constraintEnd_toEndOf="@id/end_guideline"
             app:layout_constraintStart_toStartOf="@id/start_guideline"
-            app:layout_constraintTop_toBottomOf="@id/upcoming_target_title" />
+            app:layout_constraintTop_toBottomOf="@id/earned_progress_title"
+            app:trackColor="@color/progress_track_color_gray"
+            app:trackCornerRadius="10dp"
+            app:trackThickness="10dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="7dp"
+            />
+
+        <TextView
+            android:id="@+id/earned_rupees_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/default_earned_count"
+            android:textColor="@color/progress_indicator_color_green"
+            android:textSize="20sp"
+            android:fontFamily="@font/poppins_medium"
+            app:layout_constraintEnd_toStartOf="@+id/target_rupees_progress"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@id/horizontal_progress_club" />
+
+        <TextView
+            android:id="@+id/target_rupees_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/default_wtd_target"
+            android:textColor="@color/dark_blue_color"
+            android:textSize="20sp"
+            android:fontFamily="@font/poppins_medium"
+            app:layout_constraintEnd_toEndOf="@+id/end_guideline"
+            app:layout_constraintStart_toEndOf="@+id/earned_rupees_progress"
+            app:layout_constraintTop_toTopOf="@id/earned_rupees_progress" />
+
+        <TextView
+            android:id="@+id/points_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/card_inner_child_horizontal_padding"
+            android:paddingHorizontal="@dimen/card_inner_child_horizontal_padding"
+            tools:text="1.95Cr Away From Diamond Club"
+            android:textAlignment="center"
+            style="@style/DefaultSmallTextStyle"
+            app:layout_constraintEnd_toEndOf="@id/end_guideline"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@id/earned_rupees_progress" />
+
 
         <Button
-            android:id="@+id/campaign_button"
+            android:id="@+id/giant_steps_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/business_card_inner_child_horizontal_padding"
             android:layout_marginBottom="@dimen/large_padding_card"
             android:backgroundTint="@color/default_widget_color"
-            android:text="View Campaign"
+            android:text="@string/view_incentive_detail_button"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/end_guideline"
             app:layout_constraintStart_toStartOf="@id/start_guideline"
-            app:layout_constraintTop_toBottomOf="@id/upcoming_target_count" />
+            app:layout_constraintTop_toBottomOf="@id/points_text" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/start_guideline"
