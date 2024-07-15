@@ -12,9 +12,8 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.view.WindowManager.LayoutParams
-import android.view.animation.AnimationUtils
-import android.widget.ExpandableListView
 import android.widget.PopupWindow
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
@@ -22,8 +21,6 @@ import androidx.core.view.marginBottom
 import androidx.core.view.marginStart
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
-import androidx.transition.Fade
-import androidx.transition.Visibility
 import com.shaikhabdulgani.practice.databinding.ActivityMainBinding
 import com.shaikhabdulgani.practice.databinding.TooltipLayoutBinding
 
@@ -59,6 +56,16 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         populateQuickQuote()
         populateGiantStepsCard()
         populateCampaignCard()
+
+        onBackPressedDispatcher.addCallback(this,object: OnBackPressedCallback(true){
+            override fun handleOnBackPressed() {
+                if (binding.main.isDrawerOpen(GravityCompat.START)){
+                    binding.main.closeDrawer(GravityCompat.START)
+                }else{
+                    finish()
+                }
+            }
+        })
     }
 
     private fun setUpTooltipClickEvent() {
@@ -157,12 +164,22 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun setUpExpandableListView() {
-        val adapter = ExpandableListAdapter(this, getNavMenuList())
-        binding.expandableList.animation = AnimationUtils.loadAnimation(this, androidx.appcompat.R.anim.abc_popup_enter)
-        binding.expandableList.setAdapter(adapter)
-        for (i in 0 until adapter.groupCount) {
-            binding.expandableList.expandGroup(i)
+//        val adapter = ExpandableListAdapter(this, getNavMenuList())
+//        binding.expandableList.animation = AnimationUtils.loadAnimation(this, androidx.appcompat.R.anim.abc_popup_enter)
+//        binding.expandableList.setAdapter(adapter)
+//        for (i in 0 until adapter.groupCount) {
+//            binding.expandableList.expandGroup(i)
+//        }
+        val adapter = MenuGroupAdapter(getNavMenuList())
+        binding.navGroupRv.adapter = adapter
+        binding.navGroupRv.layoutManager = LinearLayoutManager(this)
+        binding.navGroupRv.setHasFixedSize(true)
+        adapter.setOnItemClickListener {
+//            if (adapter.itemCount <= it + 1) {
+                binding.navGroupRv.scrollToPosition(it + 1)
+//            }
         }
+
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

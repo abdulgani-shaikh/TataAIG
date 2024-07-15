@@ -12,5 +12,8 @@
     android:gravity="center_vertical"
     android:paddingHorizontal="@dimen/business_card_inner_child_vertical_padding"
     android:paddingVertical="@dimen/card_inner_child_vertical_padding"
-    android:drawablePadding="10dp"
+    android:drawablePadding="@dimen/card_inner_child_vertical_padding"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackgroundBorderless"
     />

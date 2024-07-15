@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:importantForAccessibility="no"
         android:src="@drawable/triangle_popup"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="@dimen/business_card_inner_child_horizontal_padding"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:elevation="@dimen/card_default_elevation"/>

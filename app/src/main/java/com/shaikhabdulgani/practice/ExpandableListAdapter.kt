@@ -4,10 +4,11 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import android.widget.BaseExpandableListAdapter
 import androidx.core.content.ContextCompat
-import com.shaikhabdulgani.practice.databinding.ItemExpandableChildBinding
 import com.shaikhabdulgani.practice.databinding.ItemExpandableGroupBinding
+import com.shaikhabdulgani.practice.databinding.ItemNavChildBinding
 
 
 class ExpandableListAdapter(
@@ -15,9 +16,15 @@ class ExpandableListAdapter(
     private val list: List<NavigationMenuGroup>
 ) : BaseExpandableListAdapter() {
 
+    private var expandingGroup = BooleanArray(list.size) { false }
 
     override fun getGroupCount(): Int {
         return list.size
+    }
+
+    override fun onGroupExpanded(groupPosition: Int) {
+        expandingGroup[groupPosition] = true
+        super.onGroupExpanded(groupPosition)
     }
 
     override fun getChildrenCount(groupPosition: Int): Int {
@@ -85,12 +92,16 @@ class ExpandableListAdapter(
         parent: ViewGroup?
     ): View {
         val binding = if (convertView == null) {
-            ItemExpandableChildBinding.inflate(LayoutInflater.from(context), parent, false)
+            ItemNavChildBinding.inflate(LayoutInflater.from(context), parent, false)
         } else {
-            ItemExpandableChildBinding.bind(convertView)
+            ItemNavChildBinding.bind(convertView)
         }
-
         binding.childItemNav.text = getChild(groupPosition, childPosition)
+
+        if (expandingGroup[groupPosition]) {
+            binding.root.animation = AnimationUtils.loadAnimation(context, R.anim.expand_anim)
+            expandingGroup[groupPosition] = false
+        }
         return binding.root
     }
 

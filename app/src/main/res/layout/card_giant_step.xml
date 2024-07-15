@@ -26,7 +26,7 @@
             app:layout_constraintHorizontal_chainStyle="spread_inside"
             app:layout_constraintBottom_toTopOf="@id/first_barrier"
             android:paddingTop="@dimen/card_inner_child_horizontal_padding"
-            android:paddingBottom="10dp"
+            android:paddingBottom="@dimen/card_inner_child_vertical_padding"
             android:gravity="center_vertical"
             />
 
@@ -221,7 +221,7 @@
             android:layout_height="wrap_content"
             android:text="@string/default_earned_count"
             android:textColor="@color/progress_indicator_color_green"
-            android:textSize="20sp"
+            android:textSize="@dimen/text_size_medium"
             android:fontFamily="@font/poppins_medium"
             app:layout_constraintEnd_toStartOf="@+id/target_rupees_progress"
             app:layout_constraintHorizontal_chainStyle="spread_inside"
@@ -234,7 +234,7 @@
             android:layout_height="wrap_content"
             android:text="@string/default_wtd_target"
             android:textColor="@color/dark_blue_color"
-            android:textSize="20sp"
+            android:textSize="@dimen/text_size_medium"
             android:fontFamily="@font/poppins_medium"
             app:layout_constraintEnd_toEndOf="@+id/end_guideline"
             app:layout_constraintStart_toEndOf="@+id/earned_rupees_progress"
