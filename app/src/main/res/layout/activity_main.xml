@@ -14,21 +14,20 @@
         <include
             android:id="@+id/action_bar_main"
             layout="@layout/action_bar_main"
-            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$Behavior"
-            />
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$Behavior" />
+
         <androidx.core.widget.NestedScrollView
             android:id="@+id/home_scrollview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scrollbars="none"
             android:overScrollMode="never"
+            android:scrollbars="none"
             app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingBottom="@dimen/default_large_padding"
-                >
+                android:paddingBottom="@dimen/default_large_padding">
 
                 <include
                     android:id="@+id/quickActionTitle"
@@ -39,23 +38,22 @@
 
                 <Space
                     android:id="@+id/startSpace"
-                    android:layout_width="5dp"
+                    android:layout_width="@dimen/default_small_gap"
                     android:layout_height="wrap_content"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/quickActionTitle"
                     app:layout_constraintEnd_toStartOf="@id/renewalCard"
-                    />
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/quickActionTitle" />
 
                 <include
                     android:id="@+id/renewalCard"
                     layout="@layout/card_quick_actions"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:layout_marginHorizontal="5dp"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toStartOf="@id/claimsCard"
                     app:layout_constraintHorizontal_chainStyle="spread_inside"
                     app:layout_constraintStart_toEndOf="@id/startSpace"
-                    app:layout_constraintEnd_toStartOf="@id/claimsCard"
                     app:layout_constraintTop_toBottomOf="@id/quickActionTitle" />
 
                 <include
@@ -65,8 +63,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="5dp"
                     android:layout_marginTop="10dp"
-                    app:layout_constraintStart_toEndOf="@id/renewalCard"
                     app:layout_constraintEnd_toStartOf="@id/paymentsCard"
+                    app:layout_constraintStart_toEndOf="@id/renewalCard"
                     app:layout_constraintTop_toBottomOf="@id/quickActionTitle" />
 
                 <include
@@ -77,8 +75,8 @@
                     android:layout_marginHorizontal="5dp"
                     android:layout_marginTop="10dp"
                     app:layout_constraintBottom_toBottomOf="@id/claimsCard"
-                    app:layout_constraintStart_toEndOf="@id/claimsCard"
                     app:layout_constraintEnd_toStartOf="@id/endSpace"
+                    app:layout_constraintStart_toEndOf="@id/claimsCard"
                     app:layout_constraintTop_toBottomOf="@id/quickActionTitle" />
 
                 <Space
@@ -86,24 +84,21 @@
                     android:layout_width="5dp"
                     android:layout_height="wrap_content"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/quickActionTitle"
-                    />
+                    app:layout_constraintTop_toBottomOf="@id/quickActionTitle" />
 
                 <androidx.constraintlayout.widget.Barrier
                     android:id="@+id/barrier_quick_actions"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:barrierDirection="bottom"
-                    app:constraint_referenced_ids="renewalCard,claimsCard,paymentsCard"
-                    />
+                    app:constraint_referenced_ids="renewalCard,claimsCard,paymentsCard" />
 
                 <include
                     android:id="@+id/summaryActionTitle"
                     layout="@layout/cardview_header_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:layout_constraintTop_toBottomOf="@id/barrier_quick_actions"
-                    />
+                    app:layout_constraintTop_toBottomOf="@id/barrier_quick_actions" />
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/businessSummaryCard"
@@ -122,10 +117,10 @@
 
                         <TextView
                             android:id="@+id/dateSummary"
+                            style="@style/DefaultSmallTextStyle"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textColor="@color/dark_blue_color"
-                            style="@style/DefaultSmallTextStyle"
                             android:textStyle="bold"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
@@ -217,24 +212,23 @@
                     app:layout_constraintStart_toEndOf="@id/travelQuote"
                     app:layout_constraintTop_toTopOf="@id/healthQuote" />
 
-<!--                <include-->
-<!--                    android:id="@+id/scrollable_giant_cards"-->
-<!--                    layout="@layout/scrollable_giant_cards"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    app:layout_constraintStart_toStartOf="parent"-->
-<!--                    app:layout_constraintTop_toBottomOf="@id/healthQuote" />-->
+                <!--                <include-->
+                <!--                    android:id="@+id/scrollable_giant_cards"-->
+                <!--                    layout="@layout/scrollable_giant_cards"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    app:layout_constraintStart_toStartOf="parent"-->
+                <!--                    app:layout_constraintTop_toBottomOf="@id/healthQuote" />-->
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/scrollable_giant_cards"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/healthQuote"
                     android:layout_marginTop="@dimen/business_card_inner_child_vertical_padding"
-                    android:scrollbars="none"
                     android:overScrollMode="never"
-                    />
+                    android:scrollbars="none"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/healthQuote" />
 
                 <include
                     android:id="@+id/giantStepsTitle"
@@ -278,35 +272,34 @@
                     android:layout_height="wrap_content"
                     app:layout_constraintTop_toBottomOf="@id/healthCard" />
 
-<!--                <TextView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    app:layout_constraintEnd_toEndOf="@id/motorSubtitle"-->
-<!--                    app:layout_constraintTop_toTopOf="@id/motorSubtitle"-->
-<!--                    app:layout_constraintBottom_toBottomOf="@id/motorSubtitle"-->
-<!--                    android:text="04"-->
-<!--                    android:textSize="@dimen/card_title_text_size"-->
-<!--                    />-->
+                <!--                <TextView-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    app:layout_constraintEnd_toEndOf="@id/motorSubtitle"-->
+                <!--                    app:layout_constraintTop_toTopOf="@id/motorSubtitle"-->
+                <!--                    app:layout_constraintBottom_toBottomOf="@id/motorSubtitle"-->
+                <!--                    android:text="04"-->
+                <!--                    android:textSize="@dimen/card_title_text_size"-->
+                <!--                    />-->
 
-<!--                <TextView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:text="@string/appbar_scrolling_view_behavior"-->
-<!--                    />-->
+                <!--                <TextView-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:text="@string/appbar_scrolling_view_behavior"-->
+                <!--                    />-->
 
-<!--                <include-->
-<!--                    android:id="@+id/motorCard"-->
-<!--                    layout="@layout/card_campaign_eligibility_layout"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    app:layout_constraintTop_toBottomOf="@id/motorSubtitle" />-->
+                <!--                <include-->
+                <!--                    android:id="@+id/motorCard"-->
+                <!--                    layout="@layout/card_campaign_eligibility_layout"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    app:layout_constraintTop_toBottomOf="@id/motorSubtitle" />-->
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/motorRv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:layout_constraintTop_toBottomOf="@id/motorSubtitle"
-                    />
+                    app:layout_constraintTop_toBottomOf="@id/motorSubtitle" />
 
                 <include
                     android:id="@+id/travelSubtitle"
@@ -334,16 +327,14 @@
                     layout="@layout/card_campaign_eligibility_layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:layout_constraintTop_toBottomOf="@id/commsLineSubtitle"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    />
+                    app:layout_constraintTop_toBottomOf="@id/commsLineSubtitle" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.core.widget.NestedScrollView>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
 
 
     <com.google.android.material.navigation.NavigationView
@@ -364,14 +355,20 @@
                 android:id="@+id/nav_header"
                 layout="@layout/nav_header" />
 
-            <ExpandableListView
-                android:id="@+id/expandable_list"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:divider="@android:color/transparent"
-                android:groupIndicator="@null"
-                android:stateListAnimator="@android:anim/bounce_interpolator"
-                android:scrollbars="none" />
+            <!--            <ExpandableListView-->
+            <!--                android:id="@+id/expandable_list"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="match_parent"-->
+            <!--                android:divider="@android:color/transparent"-->
+            <!--                android:groupIndicator="@null"-->
+            <!--                android:scrollbars="none" />-->
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/nav_group_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scrollbars="none"
+                    />
         </LinearLayout>
     </com.google.android.material.navigation.NavigationView>
 

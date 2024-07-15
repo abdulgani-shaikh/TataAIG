@@ -4,7 +4,6 @@ import android.content.res.Resources
 import android.graphics.Canvas
 import android.graphics.Paint
 import android.graphics.Rect
-import android.util.Log
 import android.view.View
 import androidx.annotation.ColorInt
 import androidx.recyclerview.widget.GridLayoutManager
@@ -14,27 +13,22 @@ import kotlin.math.max
 
 
 class DotsIndicatorDecoration(
-    radius: Int,
-    padding: Int,
-    indicatorHeight: Int,
+    private val radius: Int = 0,
+    private val indicatorItemPadding: Int = 0,
+    private val indicatorHeight: Int = 0,
     @ColorInt colorInactive: Int,
     @ColorInt colorActive: Int
 ) : RecyclerView.ItemDecoration() {
 
-    companion object{
+    companion object {
         const val TAG = "DotsIndicatorDecoration"
     }
-
-    private var indicatorHeight = 0
-    private var indicatorItemPadding = 0
-    private var radius = 0
 
     private val inactivePaint = Paint()
     private val activePaint = Paint()
 
     init {
         val strokeWidth = Resources.getSystem().displayMetrics.density * 1
-        this.radius = radius
         inactivePaint.strokeCap = Paint.Cap.ROUND
         inactivePaint.strokeWidth = strokeWidth
         inactivePaint.style = Paint.Style.FILL
@@ -46,9 +40,6 @@ class DotsIndicatorDecoration(
         activePaint.style = Paint.Style.FILL
         activePaint.isAntiAlias = true
         activePaint.color = colorActive
-
-        this.indicatorItemPadding = padding
-        this.indicatorHeight = indicatorHeight
     }
 
     override fun onDrawOver(c: Canvas, parent: RecyclerView, state: RecyclerView.State) {
@@ -79,9 +70,6 @@ class DotsIndicatorDecoration(
         if (activePosition == RecyclerView.NO_POSITION) {
             return
         }
-
-        Log.d(TAG,"onDrawOver called")
-
         parent.layoutManager!!.findViewByPosition(activePosition) ?: return
 
         drawActiveDot(c, indicatorStartX, indicatorPosY, activePosition)

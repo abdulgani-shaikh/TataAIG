@@ -36,4 +36,7 @@
     <string name="not_eligible">Not Eligible</string>
     <string name="view_incentive_detail_button">View Incentive detail</string>
     <string name="default_wtd_target">2Cr</string>
+    <string name="medicare_plus">MediCare Plus</string>
+    <string name="medicare_subtitle">Get enhanced coverage and peace of mind</string>
+    <string name="know_more">Know More</string>
 </resources>
